@@ -1,0 +1,10 @@
+.lake/
+.elan/
+.venv/
+__pycache__/
+*.pyc
+*.olean
+*.ilean
+*.log
+.DS_Store
+Thumbs.db

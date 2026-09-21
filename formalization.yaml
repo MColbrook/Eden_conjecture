@@ -1,0 +1,85 @@
+version: "v0.4"
+project:
+  name: "Aperiodic maximisers of Lyapunov dimension"
+  description: >-
+    Lean proofs for a polynomial flow on Euclidean five-space whose maximal
+    Lyapunov dimension is attained on an aperiodic invariant torus.
+  authors: ["Matthew J. Colbrook"]
+  responsible_maintainers: ["Matthew J. Colbrook"]
+  license: "UNLICENSED"
+sources:
+  - title: "Aperiodic maximisers of Lyapunov dimension: A counterexample to the unrestricted form of Eden's conjecture"
+    authors: ["Matthew J. Colbrook"]
+    type: "manuscript"
+    location: "Theorem 1.1, both lemmas, their proofs, and the supplementary geometric and dynamical results"
+    relationship: "formalizes"
+    author_endorsement: "participated"
+    sha256: "632587ad43abc866f2ede607fa10c918bd15935a392409c09611425e22fc9b37"
+status:
+  scope: >-
+    The polynomial ODE, global attractor, variational equations, singular
+    values, Lyapunov exponents and dimensions, periodic-orbit classification,
+    alternative dimension conventions, Hausdorff dimensions, recurrence,
+    instability, rational-frequency perturbations and interpolation concavity.
+  stage: "complete"
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "EdenVerified.main_theorem"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "EdenVerified.example_c_eight"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "EdenVerified.attractor_lemma"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+    - declaration: "EdenVerified.planar_singular_value_lemma"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+  final_declarations: 219
+  supporting_theorems: 777
+  supporting_library: "Eden/"
+  specification: "Challenge.lean"
+  specification_placeholders: 219
+automation:
+  methods:
+    - method: "other"
+      tool_setup: "Lean tactics and kernel checking with pinned Mathlib dependencies."
+fidelity:
+  divergences: >-
+    Squared radii and explicit radial solutions provide intermediate formulas.
+    The derivative and singular values use the ambient Euclidean inner product.
+    Fin 5 indices are numbered from zero. Historical assertions and cited
+    external results are outside the formal statements.
+review:
+  status: "Lean kernel and Comparator checked"
+alignment:
+  main_results: "Solution.lean"
+  statement_specification: "Challenge.lean"
+  coverage: "COVERAGE.md"
+  comparison: "comparator.json"
+toolchain:
+  lean: "leanprover/lean4:v4.33.1"
+  lean_commit: "819816b2e0a3bf405af45ae5c7af2491d8f5bee6"
+  mathlib_commit: "0df444a360eaa60ab8c11dca51a86af692955474"
+  dependency_manifest: "lake-manifest.json"
+  comparator_commit: "c0c5a52d2aff92b457c3e5ed4a68c1ebc5795809"
+  exporter_commit: "15f6055e299ad5b89345e533cc2192f4cc00f659"
+  comparator_toolchain: "leanprover/lean4:v4.33.1"
+acknowledgements: >-
+  Mathlib contributors; module comments identify reused developments and
+  their authors. See NOTICE.md for library and tool attribution.
