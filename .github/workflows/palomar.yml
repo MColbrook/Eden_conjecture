@@ -18,6 +18,8 @@ jobs:
       repository: MColbrook/Eden_conjecture
       commit: ${{ inputs.commit || github.sha }}
       pipeline_commit: 3561d237dcc4b28482558ad28a64d767d7cc8615
-      request_id: eden-${{ github.run_id }}-${{ github.run_attempt }}
+      # The pinned verifier requires exactly 12 lowercase letters/digits.
+      # Its reusable-workflow concurrency group also includes the GitHub run ID.
+      request_id: edenprecheck
       mode: full
       options: '{"comparator_config_path":"palomar-comparator.json","authorization_relationship":"maintainer"}'
