@@ -22,4 +22,4 @@ jobs:
       # Its reusable-workflow concurrency group also includes the GitHub run ID.
       request_id: edenprecheck
       mode: full
-      options: '{"comparator_config_path":"palomar-comparator.json","authorization_relationship":"maintainer"}'
+      options: '{"comparator_config_path":"palomar-comparator.json","authorization_relationship":"I am a responsible author or maintainer"}'
