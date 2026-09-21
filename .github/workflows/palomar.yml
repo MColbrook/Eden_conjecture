@@ -1,0 +1,23 @@
+name: Palomar full preflight
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit:
+        description: Full commit SHA to check (blank uses the selected ref)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: PalomarRegistry/PalomarSubmission/.github/workflows/submission.yml@3561d237dcc4b28482558ad28a64d767d7cc8615
+    with:
+      repository: MColbrook/Eden_conjecture
+      commit: ${{ inputs.commit || github.sha }}
+      pipeline_commit: 3561d237dcc4b28482558ad28a64d767d7cc8615
+      request_id: eden-${{ github.run_id }}-${{ github.run_attempt }}
+      mode: full
+      options: '{"comparator_config_path":"palomar-comparator.json","authorization_relationship":"maintainer"}'

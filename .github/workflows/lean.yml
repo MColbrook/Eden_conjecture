@@ -11,9 +11,9 @@ jobs:
         with:
           auto-config: false
           build: true
-          build-args: Eden Solution
+          build-args: Eden Solution PalomarSolution
           use-mathlib-cache: true
       - name: Check theorem axioms
         run: python3 checks/check_axioms.py
       - name: Compile statement specification
-        run: lake build Challenge
+        run: lake build Challenge PalomarChallenge

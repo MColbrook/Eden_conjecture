@@ -1,5 +1,8 @@
 # Attribution
 
+Copyright 2026 Matthew J. Colbrook. The repository is licensed under the
+Apache License 2.0; see [LICENSE](LICENSE).
+
 The mathematical construction and paper are by Matthew J. Colbrook.
 
 This development uses [Mathlib](https://github.com/leanprover-community/mathlib4),

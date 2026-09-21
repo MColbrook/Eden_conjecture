@@ -4,18 +4,23 @@ From the repository root:
 
 ```sh
 lake exe cache get
-lake build Eden Solution
+lake build Eden Solution PalomarSolution
 python3 checks/check_axioms.py
-lake build Challenge
+lake build Challenge PalomarChallenge
 ```
 
-The Python script runs both `#print axioms` files, checks that all 219 final
-and 777 supporting declarations appear, and checks their axioms against
+The Python script runs all three `#print axioms` files, checks that all 219 final,
+777 supporting and one Palomar declaration appear, and checks their axioms against
 `propext`, `Classical.choice` and `Quot.sound`. It uses the Python standard
 library. On Windows, use `python` in place of `python3`.
 
 `Challenge.lean` specifies the 219 final statements with deliberate proof
 placeholders. `Solution.lean` proves them and imports only `Eden`.
+
+`PalomarChallenge.lean` independently states the main counterexample using only
+Mathlib. `PalomarSolution.lean` proves it from the existing development.
+Use `palomar-comparator.json` and the full workflow in [PALOMAR.md](../PALOMAR.md)
+for Palomar submission; the older comprehensive suite below is separate.
 
 ## Lean Comparator
 

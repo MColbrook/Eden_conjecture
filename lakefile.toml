@@ -15,3 +15,9 @@ name = "Solution"
 
 [[lean_lib]]
 name = "Challenge"
+
+[[lean_lib]]
+name = "PalomarChallenge"
+
+[[lean_lib]]
+name = "PalomarSolution"

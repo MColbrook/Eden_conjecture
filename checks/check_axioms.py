@@ -38,3 +38,4 @@ if __name__ == "__main__":
     sys.stderr.reconfigure(encoding="utf-8")
     check("checks/FinalAxioms.lean", 219)
     check("checks/SupportingAxioms.lean", 777)
+    check("checks/PalomarAxioms.lean", 1)

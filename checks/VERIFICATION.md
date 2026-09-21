@@ -39,3 +39,33 @@ validation against the published `formalization.yaml` v0.4 schema.
 
 The GitHub workflow runs compilation and axiom checks on pushes and pull
 requests. Comparator can be run separately using [the Linux instructions](README.md).
+
+## Independent Palomar statement
+
+On 22 September 2026, the independent statement and proof wrapper were built
+in an isolated Linux checkout using Lean 4.33.1 and the pinned dependency
+manifest:
+
+```sh
+lake build PalomarSolution PalomarChallenge
+python3 checks/check_axioms.py
+```
+
+The build completed successfully (3650 jobs). The axiom checker accepted all
+219 original final declarations, 777 supporting theorems and
+`EdenPalomar.main_theorem`, using only the three permitted axioms above.
+The intentional `sorry` in `PalomarChallenge.lean` is the comparison target;
+it is not imported by `PalomarSolution.lean`.
+
+The new statement was checked against Theorem 1.1 and equations (1.1)--(1.7)
+of the public Zenodo paper. Its dimensions use the ambient Euclidean derivative,
+the flow's existence and forward uniqueness are explicit conclusions, and
+attainment of the local-dimension supremum and existence of the exponent limits
+are proved. See [PALOMAR.md](../PALOMAR.md) for the correspondence.
+
+This build and axiom audit are distinct from Palomar's complete mechanical
+preflight. That check is run through `.github/workflows/palomar.yml`, pinned to
+PalomarSubmission commit `3561d237dcc4b28482558ad28a64d767d7cc8615`, with
+`mode: full` and `palomar-comparator.json`. The GitHub Actions mechanical report
+identifies its exact checked source commit and result; a passing report is
+required before actual submission.
