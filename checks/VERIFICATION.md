@@ -63,6 +63,11 @@ the flow's existence and forward uniqueness are explicit conclusions, and
 attainment of the local-dimension supremum and existence of the exponent limits
 are proved. See [PALOMAR.md](../PALOMAR.md) for the correspondence.
 
+The independent pair also passed the documented local Comparator and Lean-kernel
+replay after giving the index-nonemptiness helper a stable public name in both
+modules. This diagnostic used the local Comparator revision listed above and
+did not run NanoDa; the full Palomar workflow below supplies that check.
+
 This build and axiom audit are distinct from Palomar's complete mechanical
 preflight. That check is run through `.github/workflows/palomar.yml`, pinned to
 PalomarSubmission commit `3561d237dcc4b28482558ad28a64d767d7cc8615`, with

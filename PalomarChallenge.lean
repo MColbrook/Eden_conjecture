@@ -104,7 +104,8 @@ def spectrumPartialSum (a : Fin 5 → ℝ) (k : ℕ) : ℝ :=
 def nonnegativeSumIndices (a : Fin 5 → ℝ) : Finset ℕ :=
   (Finset.range 6).filter (fun k => 0 ≤ spectrumPartialSum a k)
 
-private theorem indices_nonempty (a : Fin 5 → ℝ) : (nonnegativeSumIndices a).Nonempty := by
+/-- The empty partial sum makes zero an admissible index. -/
+theorem indices_nonempty (a : Fin 5 → ℝ) : (nonnegativeSumIndices a).Nonempty := by
   refine ⟨0, ?_⟩
   simp only [nonnegativeSumIndices, Finset.mem_filter, Finset.mem_range]
   exact ⟨by decide, by simp [spectrumPartialSum]⟩
