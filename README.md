@@ -2,6 +2,8 @@
 
 Lean formalisation of Matthew J. Colbrook's paper, [*Aperiodic maximisers of Lyapunov dimension: a counterexample to the unrestricted form of Eden's conjecture*](https://doi.org/10.5281/zenodo.22883032).
 
+This formalization is registered with Palomar as **"A counterexample to the unrestricted form of Eden's conjecture"**, [PALOMAR-2026-09-22-000001 v1](https://palomar-registry.org/entry?id=PALOMAR-2026-09-22-000001&version=1). The registered snapshot is [commit 9e803e9](https://github.com/MColbrook/Eden_conjecture/tree/9e803e9885d23064a24b138b0068a249f97d13ed).
+
 For every real parameter $c>4$, the paper constructs a polynomial differential equation on Euclidean ℝ⁵ with uniformly negative divergence and a compact global attractor $A$. Its Lyapunov dimension is $4+4/c$, attained precisely on an invariant two-torus carrying an irrational linear flow. The maximum over equilibria and periodic orbits is $3$. The same maxima and maximising sets hold for the finite-time local dimension at every positive real time and for the asymptotic Kaplan–Yorke dimension.
 
 [Solution.lean](Solution.lean) contains 219 results covering the main theorem, both lemmas, the calculations in their proofs, and the further results in the paper. The [Eden](Eden) library contains 777 supporting theorems. [COVERAGE.md](COVERAGE.md) describes the correspondence with the paper and the organisation of the library. [READING_GUIDE.md](READING_GUIDE.md) gives a route through the statements and definitions for a mathematical review.
@@ -41,7 +43,7 @@ The axiom reports cover all 219 final results, all 777 public supporting theorem
 
 The proofs use exact identities and analytic estimates. [formalization.yaml](formalization.yaml) contains the project metadata, source information, and verification scope. Attribution for Mathlib results and adapted arguments appears in the relevant module headers.
 
-## Palomar submission
+## Palomar registration
 
 [PalomarChallenge.lean](PalomarChallenge.lean) independently states the main
 counterexample using only Mathlib imports and explicit mathematical definitions.
